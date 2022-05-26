@@ -1,0 +1,141 @@
+body{
+    margin: 0;
+    padding: 0;
+}
+.container{
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    background-color: #fff;
+    padding: 0;
+}
+
+/* universal */
+.play-g{
+    height: inherit;
+    max-width: 450px;
+    margin: auto;
+    border: 1px solid rgb(160, 209, 237);
+}
+
+
+.gcont{
+ background-color: black;
+ height: 80%;
+}
+
+.gcont2{
+    height: 20%;
+    background-color: rgb(46, 41, 61);
+}
+
+.topbar{
+    height: 20%;
+    background-color: rgb(12, 98, 12);
+    border-radius: 0 0 20px 20px;
+    z-index: 50;
+}
+
+
+
+.topbar{
+    display: flex;
+    color: #fff;
+}
+.result_text{
+    margin: 0 !important;
+}
+
+.ticket-details{
+    display: inline;
+    margin-left: 10px;
+}
+
+.icon-cont img{
+    height: 80px;
+    display: inline;
+    margin: 5px;
+    border-radius: 5px;
+}
+
+#manual_scan{
+    margin: 10px;
+    border-radius: 0 0 10px 0;
+    background-color: rgb(46, 41, 61);
+    color: orangered;
+}
+
+
+
+/*  */
+
+.scanner-cont{
+    height: 80%;
+    overflow: hidden;
+}
+
+#reader{
+    max-width: 100%;
+}
+
+
+
+/*  */
+#history-cont{
+    height: 70%;
+    background-color: rgb(46, 41, 61);
+    overflow-x: auto;
+    overflow-y: hidden;
+}
+ #history{
+     height: 100%;
+     width: max-content;
+ }
+
+
+/*  */
+.nav{
+    height: 30%;
+    background-color: rgb(12, 98, 12);
+    padding: 4px 2px;
+    border-radius: 10px 10px 0 0;
+}
+
+
+.history-icon{
+    height: 100%;
+    display: inline;
+    margin: 2px;
+}
+
+#scan_count{
+    display: inline;
+    margin-left: 8px;
+    background-color: rgb(46, 41, 61);
+    color: #fff;
+    padding: 8px;
+    border-radius: 50%;
+}
+
+#qr-input-file{
+    max-width: 50%;
+    border: 1px solid rgb(46, 41, 61);
+    border-radius: 5px;
+
+    background-color: rgb(46, 41, 61);
+    color: #fff;
+}
+
+.processing{
+    position: fixed;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    text-align: center;
+    background-color: rgba(2, 33, 2, 0.785);
+}
+
+.processor{
+    width: 100px;
+    margin-top: 200px;
+}

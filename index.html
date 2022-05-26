@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>QRCode Scanner</title>
+    <link rel="stylesheet" href="style.css">
+
+    <script src="/unpkg-qrcode-221.js"></script>
+    <script src="/script.js"></script>
+</head>
+<body class="h-full">
+    <div class="container">
+        <div class="play-g">
+            <div class="gcont">
+                <div class="topbar">
+                    <div class="icon-cont">
+                        <img src="/scanner2.gif" id="result_icon" alt="img">
+                    </div>
+                    <div class="ticket-details">
+                        <h3 id="message" class="result_text">SCAN</h3>
+                        <input type="text" id="names" placeholder="Full Name" readonly>
+                        <input type="text" id="phone" placeholder="Phone" readonly>
+                        <input type="text" id="ticket_number" placeholder="Ticket Number">
+                    </div>
+                    <button id="manual_scan" onclick="manualScan()">Scan</button>
+                </div>
+        
+                <div class="scanner-cont">
+                    <div id="reader" class="full-w"></div>
+                </div>
+            </div>
+    
+            <div class="gcont2">
+                <div id="history-cont">
+                    <div id="history" ></div>
+                </div>
+        
+                <div class="nav flex bg-green-600 h-6">
+                    <div class="controls-icons">
+                        <input type="file" onclick="scanFromFile()" id="qr-input-file" accept="images/*" />
+                        <button class="shadow text-white text-xs"  onclick="camSwitch()"><img src="/sc.png" width="20" alt=""></button>
+                        <div id="scan_count">00</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div id="filereader" style="display: none;"></div>
+    <!-- Processor indicator -->
+    <div id="processor-cont" class="not-processing">
+        <img src="ajax-loader.gif" alt="" class="processor">
+    </div>
+</body>
+</html>
