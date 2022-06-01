@@ -19,7 +19,7 @@
                         <img src="/scanner2.gif" id="result_icon" alt="img">
                     </div>
                     <div class="ticket-details">
-                        <h3 id="message" class="result_text">SCAN</h3>
+                        <h4 id="message" class="result_text">SCAN</h4>
                         <input type="text" id="names" placeholder="Full Name" readonly>
                         <input type="text" id="phone" placeholder="Phone" readonly>
                         <input type="text" id="ticket_number" placeholder="Ticket Number">
@@ -31,19 +31,10 @@
                     <div id="reader" class="full-w"></div>
                 </div>
             </div>
-    
-            <div class="gcont2">
-                <div id="history-cont">
-                    <div id="history" ></div>
-                </div>
-        
-                <div class="nav flex bg-green-600 h-6">
-                    <div class="controls-icons">
-                        <input type="file" onclick="scanFromFile()" id="qr-input-file" accept="images/*" />
-                        <button class="shadow text-white text-xs"  onclick="camSwitch()"><img src="/sc.png" width="20" alt=""></button>
-                        <div id="scan_count">00</div>
-                    </div>
-                </div>
+            
+            <div class="nav bg-green-600 h-6">
+                <img  onclick="camSwitch()" src="/sc.png" width="40" alt="">
+                <span id="scan_count">00</span>
             </div>
         </div>
     </div>

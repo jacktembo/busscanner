@@ -16,6 +16,7 @@ body{
     max-width: 450px;
     margin: auto;
     border: 1px solid rgb(160, 209, 237);
+    background-color: black;
 }
 
 
@@ -24,23 +25,12 @@ body{
  height: 80%;
 }
 
-.gcont2{
-    height: 20%;
-    background-color: rgb(46, 41, 61);
-}
-
-.topbar{
-    height: 20%;
-    background-color: rgb(12, 98, 12);
-    border-radius: 0 0 20px 20px;
-    z-index: 50;
-}
-
-
-
 .topbar{
     display: flex;
     color: #fff;
+    background-color: rgb(12, 98, 12);
+    border-radius: 0 0 20px 20px;
+    z-index: 50;
 }
 .result_text{
     margin: 0 !important;
@@ -70,7 +60,7 @@ body{
 /*  */
 
 .scanner-cont{
-    height: 80%;
+    max-height: 90%;
     overflow: hidden;
 }
 
@@ -80,50 +70,24 @@ body{
 
 
 
-/*  */
-#history-cont{
-    height: 70%;
-    background-color: rgb(46, 41, 61);
-    overflow-x: auto;
-    overflow-y: hidden;
-}
- #history{
-     height: 100%;
-     width: max-content;
- }
-
 
 /*  */
 .nav{
-    height: 30%;
     background-color: rgb(12, 98, 12);
-    padding: 4px 2px;
+    padding: 4px;
     border-radius: 10px 10px 0 0;
-}
-
-
-.history-icon{
-    height: 100%;
-    display: inline;
-    margin: 2px;
+    text-align: center;
+    bottom: 0;
+    position: absolute;
+    z-index: 40;
 }
 
 #scan_count{
-    display: inline;
     margin-left: 8px;
     background-color: rgb(46, 41, 61);
     color: #fff;
-    padding: 8px;
+    padding: 16px;
     border-radius: 50%;
-}
-
-#qr-input-file{
-    max-width: 50%;
-    border: 1px solid rgb(46, 41, 61);
-    border-radius: 5px;
-
-    background-color: rgb(46, 41, 61);
-    color: #fff;
 }
 
 .processing{

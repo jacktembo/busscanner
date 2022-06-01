@@ -24,7 +24,7 @@ var error_beep = "./sounds/Error-sound.mp3";
 var success_img = "success.png";
 var expired_img = "expired.png";
 var error_img = "invalid.png";
-// var next_img = "next.png";
+var next_img = "next.png";
 
 
 
@@ -36,7 +36,7 @@ function qrScanner(params) {
   };
   // const config = { fps: 30, qrbox: { width: 250, height: 250 }, disableFlip:true };
   const config = {
-    fps: 10,
+    fps: 30,
     qrbox: {width: 250, height: 250},
     rememberLastUsedCamera: true,
     // Only support camera scan type.
@@ -70,30 +70,6 @@ function qrScanner(params) {
       // handle err
     });
 
-}
-
-// SCAN FROM FILE
-function scanFromFile() {
-    
-    const html5QrCode = new Html5Qrcode("filereader");
-    const fileinput = document.getElementById('qr-input-file');
-    fileinput.addEventListener('change', e => {
-        if (e.target.files.length == 0) {
-            // No file selected, ignore 
-            return;
-        }
-
-        const imageFile = e.target.files[0];
-        // Scan QR Code
-        html5QrCode.scanFile(imageFile, true)
-        .then(decodedText => {
-            ticketVerification(decodedText);
-        })
-        .catch(err => {
-            // failure, handle it.
-            alert(`Error scanning file. Reason: ${err}`)
-        });
-    });
 }
 
 function manualScan() {
@@ -138,15 +114,12 @@ function updateUI(response) {
   if (arr.status == "success") {
     beepControl(success_beep);
     setIcon(success_img);
-    createHistory(arr.status);
   } else if (arr.status == "failed" && arr.message == "Already Scanned") {
     beepControl(expired_beep);
     setIcon(expired_img);
-    createHistory("expired");
   } else if (arr.status == "failed" && arr.message != "Already Scanned") {
     beepControl(error_beep);
     setIcon(error_img);
-    createHistory(arr.status);
   }
 
   getTicketDetails(arr);
@@ -192,32 +165,6 @@ function beepControl(sound) {
 }
 
 
-function createHistory(status) {
-    scan_history.push(status);
-    const node = document.createElement("img");
-
-    switch (status) {
-        case "success":
-            node.setAttribute("src", success_img);
-            break;
-
-        case "expired":
-            node.setAttribute("src", expired_img);
-            break;
-
-        case "failed":
-            node.setAttribute("src", error_img);
-            break;
-    
-        default:
-            break;
-    }
-
-    node.className = "history-icon";
-    // document.getElementById("history").append(node);
-    // document.getElementById("history-cont").scroll({left:document.getElementById("history-cont").scrollWidth, behavior:"smooth"});
-}
-
 function camSwitch() {
   if (cameras) {
     if (cameras > 1 && (camera + 1) < cameras) {
@@ -230,4 +177,3 @@ function camSwitch() {
 
   qrScanner();
 }
-
